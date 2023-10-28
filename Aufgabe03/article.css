@@ -1,0 +1,52 @@
+body {
+    background-color: whitesmoke !important;
+}
+
+.header {
+    padding-top: 4%;
+    padding-bottom: 1%;
+    background-color: beige;
+    text-align: center;
+    font-size: xx-large;
+    font-family: Impact, fantasy;
+    line-height: 10px;
+}
+.header span {
+
+    color: darkslategray;
+}
+
+.header p {
+    font-size: 50%;
+}
+
+.article {
+    text-align: justify;
+    padding: 1%;
+    background-color: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.article h3 {
+    line-height: 10%;
+}
+
+.article h3 span {
+    font-size: 150%;
+    color: darkslategray;
+}
+
+.article hr {
+    border: none;
+    border-top: 3px solid darkslategray;
+    width: 98%;
+}
+
+.article p:last-child {
+    text-align: right;
+    font-size: 60%;
+}

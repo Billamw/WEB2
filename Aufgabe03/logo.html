@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <defs>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="offset"/>
+            <feGaussianBlur stdDeviation="2" in="offset" result="blur"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="blur" result="shadow"/>
+        </filter>
+    </defs>
+
+    <circle cx="50" cy="50" r="40" fill="red" stroke="#fff" stroke-width="4" />
+    <circle cx="100" cy="50" r="40" fill="green" stroke="#fff" stroke-width="4" />
+    <circle cx="75" cy="100" r="40" fill="blue" stroke="#fff" stroke-width="4" />
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="24" fill="#FFF" filter="url(#shadow)">WEB 23</text>
+</svg>
+</body>
+</html>
