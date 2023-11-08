@@ -1,0 +1,41 @@
+body{
+}
+
+.container {
+  background-color: darkcyan;
+  height: 80%;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  overflow: auto;
+}
+
+.container div{
+  //position: absolute;
+  //overflow: clip;
+}
+
+@for $i from 1 through 50 {
+  .item#{$i} {
+    //overflow: hidden;
+    border-radius: 10px;
+    grid-column: #{($i % 5)} / span 1;
+    grid-row: #{ceil($i / 5)} / span 1;
+
+    & img{
+      border-radius: 10px;
+      //width: 100%;
+      //height: auto;
+    }
+
+    & img:hover{
+      transition: 0.2s;
+      transform: scale(120%);
+      transform-origin: center;
+      position: relative;
+      border: solid 2px grey;
+    }
+  }
+
+}

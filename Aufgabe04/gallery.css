@@ -1,0 +1,811 @@
+.container {
+  background-color: darkcyan;
+  height: 80%;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  overflow: auto;
+}
+
+.item1 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+.item1 img {
+  border-radius: 10px;
+}
+.item1 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item2 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+}
+.item2 img {
+  border-radius: 10px;
+}
+.item2 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item3 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 1/span 1;
+}
+.item3 img {
+  border-radius: 10px;
+}
+.item3 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item4 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 1/span 1;
+}
+.item4 img {
+  border-radius: 10px;
+}
+.item4 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item5 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 1/span 1;
+}
+.item5 img {
+  border-radius: 10px;
+}
+.item5 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item6 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+}
+.item6 img {
+  border-radius: 10px;
+}
+.item6 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item7 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 2/span 1;
+}
+.item7 img {
+  border-radius: 10px;
+}
+.item7 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item8 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 2/span 1;
+}
+.item8 img {
+  border-radius: 10px;
+}
+.item8 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item9 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 2/span 1;
+}
+.item9 img {
+  border-radius: 10px;
+}
+.item9 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item10 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 2/span 1;
+}
+.item10 img {
+  border-radius: 10px;
+}
+.item10 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item11 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 3/span 1;
+}
+.item11 img {
+  border-radius: 10px;
+}
+.item11 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item12 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 3/span 1;
+}
+.item12 img {
+  border-radius: 10px;
+}
+.item12 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item13 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 3/span 1;
+}
+.item13 img {
+  border-radius: 10px;
+}
+.item13 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item14 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 3/span 1;
+}
+.item14 img {
+  border-radius: 10px;
+}
+.item14 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item15 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 3/span 1;
+}
+.item15 img {
+  border-radius: 10px;
+}
+.item15 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item16 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 4/span 1;
+}
+.item16 img {
+  border-radius: 10px;
+}
+.item16 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item17 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 4/span 1;
+}
+.item17 img {
+  border-radius: 10px;
+}
+.item17 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item18 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 4/span 1;
+}
+.item18 img {
+  border-radius: 10px;
+}
+.item18 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item19 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 4/span 1;
+}
+.item19 img {
+  border-radius: 10px;
+}
+.item19 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item20 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 4/span 1;
+}
+.item20 img {
+  border-radius: 10px;
+}
+.item20 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item21 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 5/span 1;
+}
+.item21 img {
+  border-radius: 10px;
+}
+.item21 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item22 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 5/span 1;
+}
+.item22 img {
+  border-radius: 10px;
+}
+.item22 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item23 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 5/span 1;
+}
+.item23 img {
+  border-radius: 10px;
+}
+.item23 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item24 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 5/span 1;
+}
+.item24 img {
+  border-radius: 10px;
+}
+.item24 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item25 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 5/span 1;
+}
+.item25 img {
+  border-radius: 10px;
+}
+.item25 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item26 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 6/span 1;
+}
+.item26 img {
+  border-radius: 10px;
+}
+.item26 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item27 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 6/span 1;
+}
+.item27 img {
+  border-radius: 10px;
+}
+.item27 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item28 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 6/span 1;
+}
+.item28 img {
+  border-radius: 10px;
+}
+.item28 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item29 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 6/span 1;
+}
+.item29 img {
+  border-radius: 10px;
+}
+.item29 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item30 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 6/span 1;
+}
+.item30 img {
+  border-radius: 10px;
+}
+.item30 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item31 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 7/span 1;
+}
+.item31 img {
+  border-radius: 10px;
+}
+.item31 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item32 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 7/span 1;
+}
+.item32 img {
+  border-radius: 10px;
+}
+.item32 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item33 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 7/span 1;
+}
+.item33 img {
+  border-radius: 10px;
+}
+.item33 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item34 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 7/span 1;
+}
+.item34 img {
+  border-radius: 10px;
+}
+.item34 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item35 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 7/span 1;
+}
+.item35 img {
+  border-radius: 10px;
+}
+.item35 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item36 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 8/span 1;
+}
+.item36 img {
+  border-radius: 10px;
+}
+.item36 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item37 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 8/span 1;
+}
+.item37 img {
+  border-radius: 10px;
+}
+.item37 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item38 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 8/span 1;
+}
+.item38 img {
+  border-radius: 10px;
+}
+.item38 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item39 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 8/span 1;
+}
+.item39 img {
+  border-radius: 10px;
+}
+.item39 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item40 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 8/span 1;
+}
+.item40 img {
+  border-radius: 10px;
+}
+.item40 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item41 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 9/span 1;
+}
+.item41 img {
+  border-radius: 10px;
+}
+.item41 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item42 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 9/span 1;
+}
+.item42 img {
+  border-radius: 10px;
+}
+.item42 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item43 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 9/span 1;
+}
+.item43 img {
+  border-radius: 10px;
+}
+.item43 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item44 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 9/span 1;
+}
+.item44 img {
+  border-radius: 10px;
+}
+.item44 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item45 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 9/span 1;
+}
+.item45 img {
+  border-radius: 10px;
+}
+.item45 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item46 {
+  border-radius: 10px;
+  grid-column: 1/span 1;
+  grid-row: 10/span 1;
+}
+.item46 img {
+  border-radius: 10px;
+}
+.item46 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item47 {
+  border-radius: 10px;
+  grid-column: 2/span 1;
+  grid-row: 10/span 1;
+}
+.item47 img {
+  border-radius: 10px;
+}
+.item47 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item48 {
+  border-radius: 10px;
+  grid-column: 3/span 1;
+  grid-row: 10/span 1;
+}
+.item48 img {
+  border-radius: 10px;
+}
+.item48 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item49 {
+  border-radius: 10px;
+  grid-column: 4/span 1;
+  grid-row: 10/span 1;
+}
+.item49 img {
+  border-radius: 10px;
+}
+.item49 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.item50 {
+  border-radius: 10px;
+  grid-column: 0/span 1;
+  grid-row: 10/span 1;
+}
+.item50 img {
+  border-radius: 10px;
+}
+.item50 img:hover {
+  transition: 0.2s;
+  transform: scale(120%);
+  transform-origin: center;
+  position: relative;
+  border: solid 2px grey;
+}
+
+/*# sourceMappingURL=gallery.css.map */
