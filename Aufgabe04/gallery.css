@@ -9,6 +9,7 @@
 }
 
 .item1 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 1/span 1;
@@ -22,9 +23,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item2 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 1/span 1;
@@ -38,9 +41,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item3 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 1/span 1;
@@ -54,9 +59,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item4 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 1/span 1;
@@ -70,9 +77,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item5 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 1/span 1;
@@ -86,9 +95,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item6 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 2/span 1;
@@ -102,9 +113,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item7 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 2/span 1;
@@ -118,9 +131,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item8 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 2/span 1;
@@ -134,9 +149,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item9 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 2/span 1;
@@ -150,9 +167,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item10 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 2/span 1;
@@ -166,9 +185,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item11 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 3/span 1;
@@ -182,9 +203,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item12 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 3/span 1;
@@ -198,9 +221,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item13 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 3/span 1;
@@ -214,9 +239,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item14 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 3/span 1;
@@ -230,9 +257,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item15 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 3/span 1;
@@ -246,9 +275,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item16 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 4/span 1;
@@ -262,9 +293,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item17 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 4/span 1;
@@ -278,9 +311,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item18 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 4/span 1;
@@ -294,9 +329,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item19 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 4/span 1;
@@ -310,9 +347,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item20 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 4/span 1;
@@ -326,9 +365,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item21 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 5/span 1;
@@ -342,9 +383,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item22 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 5/span 1;
@@ -358,9 +401,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item23 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 5/span 1;
@@ -374,9 +419,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item24 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 5/span 1;
@@ -390,9 +437,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item25 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 5/span 1;
@@ -406,9 +455,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item26 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 6/span 1;
@@ -422,9 +473,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item27 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 6/span 1;
@@ -438,9 +491,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item28 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 6/span 1;
@@ -454,9 +509,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item29 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 6/span 1;
@@ -470,9 +527,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item30 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 6/span 1;
@@ -486,9 +545,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item31 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 7/span 1;
@@ -502,9 +563,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item32 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 7/span 1;
@@ -518,9 +581,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item33 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 7/span 1;
@@ -534,9 +599,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item34 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 7/span 1;
@@ -550,9 +617,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item35 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 7/span 1;
@@ -566,9 +635,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item36 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 8/span 1;
@@ -582,9 +653,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item37 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 8/span 1;
@@ -598,9 +671,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item38 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 8/span 1;
@@ -614,9 +689,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item39 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 8/span 1;
@@ -630,9 +707,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item40 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 8/span 1;
@@ -646,9 +725,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item41 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 9/span 1;
@@ -662,9 +743,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item42 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 9/span 1;
@@ -678,9 +761,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item43 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 9/span 1;
@@ -694,9 +779,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item44 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 9/span 1;
@@ -710,9 +797,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item45 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 9/span 1;
@@ -726,9 +815,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item46 {
+  position: relative;
   border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 10/span 1;
@@ -742,9 +833,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item47 {
+  position: relative;
   border-radius: 10px;
   grid-column: 2/span 1;
   grid-row: 10/span 1;
@@ -758,9 +851,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item48 {
+  position: relative;
   border-radius: 10px;
   grid-column: 3/span 1;
   grid-row: 10/span 1;
@@ -774,9 +869,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item49 {
+  position: relative;
   border-radius: 10px;
   grid-column: 4/span 1;
   grid-row: 10/span 1;
@@ -790,9 +887,11 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 .item50 {
+  position: relative;
   border-radius: 10px;
   grid-column: 0/span 1;
   grid-row: 10/span 1;
@@ -806,6 +905,7 @@
   transform-origin: center;
   position: relative;
   border: solid 2px grey;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=gallery.css.map */
