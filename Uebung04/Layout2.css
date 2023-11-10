@@ -1,0 +1,36 @@
+.container div {
+    display: grid;
+    place-items: center;
+    background-color: aquamarine;
+}
+.container{
+    display: grid;
+    gap: 0.5rem;
+    /*grid-template-columns: repeat(3, 1fr);*/
+    /*grid-template-rows: repeat(5, 1fr);*/
+    height: 100vh;
+
+    grid-template-areas:
+        "header header header"
+        "column1 column2 column3"
+        "column1 column2 column3"
+        "column1 column2 column3"
+        "footer footer footer";
+
+}
+.header{
+    /*grid-column: 1 / span 3*/
+    grid-area: header;
+}
+.column1{
+    grid-area: column1;
+}
+.column2{
+    grid-area: column2;
+}
+.column3{
+    grid-area: column3;
+}
+.footer{
+     grid-area: footer;
+}
