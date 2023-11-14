@@ -1,22 +1,117 @@
-/*body {*/
-/*    display: grid;*/
-/*    place-items: center;*/
-/*    grid-template-areas:*/
-/*                    "header header  header header"*/
-/*                    "navigation main main news"*/
-/*                    "navigation main main news"*/
-/*                    "navigation main main news"*/
-/*                    "navigation main main news"*/
-/*                    "navigation main main news"*/
-/*                    "navigation main main sidebar"*/
-/*                    "navigation main main sidebar"*/
-/*                    "navigation main main sidebar"*/
-/*                    "navigation main main sidebar"*/
-/*                    "navigation main main sidebar"*/
-/*                    "contact contact contact2 contact2"*/
-/*                    "contact contact contact2 contact2"*/
-/*                    "footer footer footer footer";*/
-/*}*/
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 30px;
+}
+
+.container div {
+    display: grid;
+    justify-content: center;
+}
+
+.header {
+    grid-area: header;
+    background-color: darkcyan;
+}
+
+.navigation {
+    grid-area: navigation;
+    background-color: orangered;
+}
+
+.main {
+    grid-area: main;
+    background-color: lightblue;
+}
+
+.news {
+    grid-area: news;
+    background-color: orange;
+}
+
+.contact {
+    grid-area: contact;
+    background-color: cyan;
+}
+
+.footer {
+    grid-column: footer;
+    background-color: lightgreen;
+}
+
+
+@media (min-width: 768px) {
+
+    .container {
+        display: grid;
+        grid-template-areas:
+                    "header header  header header"
+                    "navigation main main news"
+                    "navigation main main news"
+                    "navigation main main news"
+                    "navigation main main news"
+                    "navigation main main news"
+                    "navigation main main sidebar"
+                    "navigation main main sidebar"
+                    "navigation main main sidebar"
+                    "navigation main main sidebar"
+                    "navigation main main sidebar"
+                    "contact contact contact2 contact2"
+                    "contact contact contact2 contact2"
+                    "footer footer footer footer";
+
+        gap: 1rem;
+        height: 100vh;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        background-color: orange;
+    }
+
+    .contact2 {
+        grid-area: contact2;
+        background-color: cyan;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+
+    .container {
+        display: grid;
+        grid-template-areas:
+                    "header header header"
+                    "navigation main main"
+                    "navigation main main"
+                    "navigation main main"
+                    "navigation main main"
+                    "navigation main main"
+                    "navigation main main"
+                    "navigation main main"
+                    "navigation main main"
+                    "navigation main main"
+                    "navigation main main"
+                    "news news news"
+                    "contact contact contact"
+                    "footer footer footer";
+
+        gap: 1rem;
+        height: 100vh;
+    }
+
+    .sidebar {
+        display: none;
+        visibility: hidden;
+        grid-area: news;
+    }
+
+    .contact2 {
+        display: none;
+        visibility: hidden;
+        grid-area: news;
+    }
+}
 
 
 @media (max-width: 480px) {
@@ -67,115 +162,4 @@
 
 }
 
-@media (min-width: 480px) and (max-width: 768px) {
 
-    .container {
-        display: grid;
-        grid-template-areas:
-                    "header header header"
-                    "navigation main main"
-                    "navigation main main"
-                    "navigation main main"
-                    "navigation main main"
-                    "navigation main main"
-                    "navigation main main"
-                    "navigation main main"
-                    "navigation main main"
-                    "navigation main main"
-                    "navigation main main"
-                    "news news news"
-                    "contact contact contact"
-                    "footer footer footer";
-
-        gap: 1rem;
-        height: 100vh;
-    }
-
-    .sidebar {
-        display: none;
-        visibility: hidden;
-        grid-area: news;
-    }
-
-    .contact2 {
-        display: none;
-        visibility: hidden;
-        grid-area: news;
-    }
-}
-
-@media (min-width: 768px) {
-
-    .container {
-        display: grid;
-        grid-template-areas:
-                    "header header  header header"
-                    "navigation main main news"
-                    "navigation main main news"
-                    "navigation main main news"
-                    "navigation main main news"
-                    "navigation main main news"
-                    "navigation main main sidebar"
-                    "navigation main main sidebar"
-                    "navigation main main sidebar"
-                    "navigation main main sidebar"
-                    "navigation main main sidebar"
-                    "contact contact contact2 contact2"
-                    "contact contact contact2 contact2"
-                    "footer footer footer footer";
-
-        gap: 1rem;
-        height: 100vh;
-    }
-
-    .sidebar {
-        grid-area: sidebar;
-        background-color: orange;
-    }
-
-    .contact2 {
-        grid-area: contact2;
-        background-color: cyan;
-    }
-}
-
-body {
-    margin: 0px;
-    padding: 0px;
-    font-size: 30px;
-}
-
-.container div {
-    display: grid;
-    justify-content: center;
-}
-
-.header {
-    grid-area: header;
-    background-color: darkcyan;
-}
-
-.navigation {
-    grid-area: navigation;
-    background-color: orangered;
-}
-
-.main {
-    grid-area: main;
-    background-color: lightblue;
-}
-
-.news {
-    grid-area: news;
-    background-color: orange;
-}
-
-.contact {
-    grid-area: contact;
-    background-color: cyan;
-}
-
-.footer {
-    grid-column: footer;
-    background-color: lightgreen;
-}
