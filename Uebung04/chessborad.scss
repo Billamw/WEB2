@@ -1,0 +1,10 @@
+@for $i from 0 through 63 {
+  .tile_#{$i}{
+    grid-column: 1;
+    @if $i % 2 == 0{
+      background-color: white;
+    } @else {
+      background-color: black;
+    }
+  }
+}

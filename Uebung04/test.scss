@@ -1,0 +1,20 @@
+$myColor: darkblue;
+
+@mixin size($dim) {
+  width: $dim;
+  height: $dim;
+}
+body{
+  background-color: $myColor;
+}
+
+div{
+  color: $myColor;
+  @include size(250px);
+}
+
+@for $i from 0 through 63 {
+  .tile_#{$i}{
+    @include size($i)
+  }
+}
