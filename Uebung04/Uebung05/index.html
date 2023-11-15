@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Listenelemente hinzufügen</title>
+</head>
+<style>
+    body{
+        display: grid;
+        place-items: center;
+    }
+</style>
+<body>
+<div class="container">
+    <input type="text" id="inputField" placeholder="Neues Element eingeben..." onkeypress="checkEnter(e)">
+    <button onclick="addToList()">Hinzufuegen</button>
+    <h2>List</h2>
+    <ul id="list">
+    </ul>
+</div>
+
+<script src="frist.js"></script>
+
+</body>
+</html>
