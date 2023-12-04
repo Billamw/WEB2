@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .container{
+            display: grid;
+            place-items: center;
+        }
+
+        .color{
+            height: 40vh;
+            width: 40vh;
+            background-color: orange;
+            box-shadow: gray 5px 5px 5px;
+            border-radius: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 17vh;
+        }
+
+        .border{
+            border: black 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="color" class="color"></div>
+        <div class="buttons">
+            <button onclick="changeColor()">Change Color</button>
+            <button onclick="toggleBorder()">Toggle Border</button>
+        </div>
+    </div>
+
+    <script>
+        function changeColor() {
+            let r = Math.random()*255
+            let g = Math.random()*255
+            let b = Math.random()*255
+            document.getElementById("color").style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        }
+        let i = 0
+        function toggleBorder() {
+            if(i%2 === 0)
+                document.getElementById("color").classList.add("border");
+            else
+                document.getElementById("color").classList.remove("border");
+
+            i++;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+
+        }
+
+        button {
+            font-size: 1.1rem;
+        }
+
+        .counter {
+            width: 40vw;
+            background-color: rgb(220,220, 220);
+            border-radius: 1rem;
+            box-shadow: rgb(128, 128, 128) 5px 5px 5px;
+            justify-content: center;
+            height: 8vh;
+            margin: 10px;
+            display: grid;
+            place-items: center;
+
+        }
+        .timer {
+            width: 40vw;
+            background-color: rgb(220,220, 220);
+            border-radius: 1rem;
+            box-shadow: rgb(128, 128, 128) 5px 5px 5px;
+            justify-content: center;
+            height: 16vh;
+            margin: 10px;
+            display: grid;
+            place-items: center;
+        }
+
+        .buttons{
+            display: flex;
+            gap: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="counter">
+            <div class = buttons>
+                <button id="down" onclick="countDown()">Down</button>
+                <span id="count" style="font-weight: bold; font-size: 1.4rem"> 0 </span>
+                <button id="up" onclick="countUp()">Up</button>
+            </div>
+        </div>
+        <div class="timer">
+            <div class="buttons">
+                <button id="stop" onclick="stop()">Stop</button>
+                <button id="start" onclick="start()">Start</button>
+            </div>
+            <span>Speed[ms]</span>
+            <input  id="text" type="text" value="100">
+            <button id="reset" onclick="reset()">Reset</button>
+        </div>
+
+    </div>
+
+    <script>
+        function countDown(){
+            let count = document.getElementById("count");
+            let tmp = parseInt(count.innerHTML);
+            tmp--;
+            count.innerHTML = tmp.toString();
+        }
+        function countUp(){
+            let count = document.getElementById("count");
+            let tmp = parseInt(count.innerHTML);
+            tmp++;
+            count.innerHTML = tmp.toString();
+        }
+
+        let timer = null;
+        let count = 0;
+
+        function start() {
+            count = parseInt(document.getElementById("count").innerHTML);
+            if(timer !== null) {
+                return;
+            }
+            timer = setInterval(function() {
+                count++;
+                document.getElementById("count").innerHTML = count;
+            }, parseInt(document.getElementById("text").value));
+        }
+
+        function stop() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+
+
+        function reset() {
+            let count = document.getElementById("count");
+            count.innerHTML = 0;
+        }
+    </script>
+</body>
+</html>
