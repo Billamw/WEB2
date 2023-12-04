@@ -1,82 +1,148 @@
 body {
   width: 100vw;
   height: 100vh;
-  display: flex;
+  display: grid;
+  place-items: center;
   text-align: center;
-  align-content: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .calculator {
+  background-color: blueviolet;
+  width: 90vw;
+  height: 90vh;
   display: grid;
-  grid-template-areas: "txt txt txt txt txt txt txt" "nm1 nm1 nm2 nm2 nm3 nm3 dvi" "nm4 nm4 nm5 nm5 nm6 nm6 min" "nm7 nm7 nm8 nm8 nm9 nm9 plu" "ptk ptk nm0 nm0 eql eql mul";
+  place-items: center;
+  grid-gap: 1px;
+  grid-template-areas: "txt txt txt txt" "nm1 nm2 nm3 dvi" "nm4 nm5 nm6 min" "nm7 nm8 nm9 plu" "ptk nm0 eql mul";
+}
+
+.calculator div {
+  background-color: aqua;
 }
 
 .number0 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm0";
 }
 
 .number1 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm1";
 }
 
 .number2 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm2";
 }
 
 .number3 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm3";
 }
 
 .number4 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm4";
 }
 
 .number5 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm5";
 }
 
 .number6 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm6";
 }
 
 .number7 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm7";
 }
 
 .number8 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm8";
 }
 
 .number9 {
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10vw;
   border-radius: 10px;
-  grid-area: nmi;
+  grid-area: "nm9";
 }
 
-.text {
-  grid-area: txt;
+.numbers {
+  border-radius: 10px;
+  width: 10vw;
+  height: 8vh;
 }
 
 .operator {
-  grid-area: opr;
+  border-radius: 10px;
+  width: 5vw;
+  height: 8vh;
+}
+
+.text {
+  width: 80vw;
+  height: 8vh;
+  border-radius: 10px;
+  grid-area: txt;
+}
+
+.dot {
+  grid-area: ptk;
+}
+
+.equal {
+  grid-area: eql;
+}
+
+.divide {
+  grid-area: dvi;
+}
+
+.multiply {
+  grid-area: mul;
+}
+
+.plus {
+  grid-area: plu;
+}
+
+.minus {
+  grid-area: min;
 }
 
 /*# sourceMappingURL=style.css.map */
