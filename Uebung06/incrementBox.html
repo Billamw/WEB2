@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            place-items: center;
+        }
+        .con {
+            display: grid;
+            place-items: center;
+        }
+        .container{
+            height: 20vh;
+            width: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(200, 200, 200);
+            border-radius: 20px;
+        }
+        .alert {
+            height: 10vh;
+            width: 20vh;
+            display: none;
+            background-color: rgb(255, 200, 200);
+            border-radius: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="container" id="myDiv">
+            <div id="number">0</div>
+        </div>
+        <button id="button">Reset</button>
+        <div class="alert">Zahl über Hundert!</div>
+
+        <script src="mouseIncrement.js" type="module"></script>
+    </div>
+</body>
+</html>
