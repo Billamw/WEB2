@@ -11,25 +11,30 @@
 <body>
     <div class="calculator">
 
-        <div class="text">test</div>
-
-        <div class="number1 numbers">1</div>
-        <div class="number2 numbers">2</div>
-        <div class="number3 numbers">3</div>
-        <div class="divide operator">/</div>
-        <div class="number4 numbers">4</div>
-        <div class="number5 numbers">5</div>
-        <div class="number6 numbers">6</div>
-        <div class="minus operator">-</div>
-        <div class="number7 numbers">7</div>
-        <div class="number8 numbers">8</div>
-        <div class="number9 numbers">9</div>
-        <div class="plus operator">+</div>
-        <div class="dot numbers">.</div>
-        <div class="number0 numbers">0</div>
-        <div class="equal numbers">=</div>
-        <div class="multiply operator">*</div>
+        <div class="text">
+            <button onclick="dump()" class="delete">Del</button>
+            <div id="oldInput" class="oldInput">100</div>
+            <div id="input" class="input">200/2</div>
+        </div>
+        <button onclick="numberinput(this)" class="number1 numbers">1</button>
+        <button onclick="numberinput(this)" class="number2 numbers">2</button>
+        <button onclick="numberinput(this)" class="number3 numbers">3</button>
+        <button onclick="operatorInput(this)" class="divide operator">/</button>
+        <button onclick="numberinput(this)" class="number4 numbers">4</button>
+        <button onclick="numberinput(this)" class="number5 numbers">5</button>
+        <button onclick="numberinput(this)" class="number6 numbers">6</button>
+        <button onclick="operatorInput(this)" class="minus operator">-</button>
+        <button onclick="numberinput(this)" class="number7 numbers">7</button>
+        <button onclick="numberinput(this)" class="number8 numbers">8</button>
+        <button onclick="numberinput(this)" class="number9 numbers">9</button>
+        <button onclick="operatorInput(this)" class="plus operator">+</button>
+        <button onclick="numberinput(this)" class="dot numbers">.</button>
+        <button onclick="numberinput(this)" class="number0 numbers">0</button>
+        <button onclick="evaluates()" class="equal numbers">=</button>
+        <button onclick="operatorInput(this)" class="multiply operator">*</button>
     </div>
+
+    <script src="calculate.js"></script>
 
 </body>
 </html>
