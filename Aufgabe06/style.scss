@@ -9,6 +9,7 @@ body{
 }
 
 .calculator{
+  margin: 0;
   background-color: blueviolet;
   width: 90vw;
   height: 90vh;
@@ -21,14 +22,14 @@ body{
                          "nm7 nm8 nm9 plu"
                          "ptk nm0 eql mul"
 }
-.calculator div {
-  background-color: aqua;
-}
+//.calculator div {
+//  background-color: aqua;
+//}
 @for $i from 0 through 9 {
   .number#{$i} {
+    margin: 0;
     display: grid;
     place-items: center;
-    width: 10vw;
 
     border-radius: 10px;
     grid-area: "nm#{$i}";
@@ -37,7 +38,7 @@ body{
 
 .numbers {
   border-radius: 10px;
-  width: 10vw;
+  width: 20vw;
   height: 8vh;
 }
 
@@ -48,8 +49,9 @@ body{
 }
 
 .text{
+  background-color: aqua;
   width: 80vw;
-  height: 8vh;
+  height: 14vh;
   border-radius: 10px;
   grid-area: txt;
 }
@@ -76,4 +78,32 @@ body{
 
 .minus{
   grid-area: min;
+}
+
+.input{
+  position: relative;
+  right: 14vw;
+  top: -2vh;
+  text-align: right;
+}
+.oldInput{
+  font-size: 70%;
+  //font-style: italic;
+  position: relative;
+  right: 14vw;
+  top: -5vh;
+  text-align: right;
+}
+
+.delete{
+  border-radius: 10px;
+  position: relative;
+  right: -32vw;
+  top: 4vh;
+  width: 8vw;
+  height: 8vh;
+}
+
+button {
+  background-color: aquamarine;
 }
