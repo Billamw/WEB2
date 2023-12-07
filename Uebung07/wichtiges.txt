@@ -1,0 +1,50 @@
+Es gibt keine Abgaben mehr
+
+Klausur Handschriftlich
+
+Code Lückentexte
+DOM Objekt wichtig
+
+Textaufgaben
+Dinge erklären
+
+Fehler im Code erkennen
+
+Bis Sonntag die API sagen, welche wann verwenden möchte für das Projekt
+Also -> Öffentliche APIs recherchieren
+
+react extensions:
+https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
+https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
+
+console: npx create-react-app first_react
+         npx start
+
+Online react coden:
+https://codesandbox.io/s/react-new
+
+index.js ist wichtigste Datei
+Webvital löschen
+im Ordner alles außer app.js und index.js löschen
+
+app.js komplett leeren
+in vscode -> rafce <Tab>
+react error function component export
+
+Dann kommt das:
+
+import React from 'react'
+
+const App = () => {
+  return (
+    <div>App</div>
+  )
+}
+
+export default App
+
+
+jsx in React darf nur einmalig übergeben werden.
+Sprich alles muss in einem Div sein bzw in einem leeren jsx Element (Empty Tag) <> </>
+
+Chrome extension um react Komponenten zu sehen im Devtool
