@@ -1,0 +1,6 @@
+div{
+    width: 30vw;
+    height: 30vw;
+    display: grid;
+    place-items: center;
+}

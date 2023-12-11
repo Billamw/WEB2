@@ -1,3 +1,7 @@
 body{
     background-color: aqua;
+    width: 100vw;
+    height: 100vw;
+    display: grid;
+    place-items: center;
 }

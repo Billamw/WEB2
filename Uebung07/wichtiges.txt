@@ -18,7 +18,7 @@ https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
 https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
 
 console: npx create-react-app first_react
-         npx start
+         npm start
 
 Online react coden:
 https://codesandbox.io/s/react-new
