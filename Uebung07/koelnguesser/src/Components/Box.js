@@ -20,10 +20,10 @@ const Box = () => {
     };
 
     return (
-        <div class="container">
-            <div class="box">
+        <div className="container">
+            <div className="box">
                 <form onSubmit={handleSubmit}>
-                    <div class="inputContainer">
+                    <div className="inputContainer">
                         <input
                             type="text"
                             value={name}
@@ -35,7 +35,7 @@ const Box = () => {
                     </div>
                 </form>
                 <h2>Highscores</h2>
-                <div class="highscores">
+                <div className="highscores">
                     {highscore.length > 0 ? (
                         <ul>
                             {highscore.map((entry, index) => (
