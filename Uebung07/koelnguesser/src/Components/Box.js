@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UseHighscore from "./UseHighscore";
+import { BrowserRouter as Link } from "react-router-dom";
 // import "./Box.css";
 
 const Box = () => {
@@ -32,6 +33,7 @@ const Box = () => {
                         />
                         {/* Hier könnte ein weiteres Input-Feld für den Highscore sein */}
                         <button type="submit">Name hinzufügen</button>
+                        {/* <Link to="/start">Start</Link> */}
                     </div>
                 </form>
                 <h2>Highscores</h2>

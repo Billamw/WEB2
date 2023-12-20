@@ -6,11 +6,13 @@ import Homepage from "./Components/Homepage.js";
 import "./App.css";
 
 const App = () => {
-    <Router>
-        <Routes>
-            <Route path="/" element={<Homepage />} />
-        </Routes>
-    </Router>;
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Homepage />} />
+            </Routes>
+        </Router>
+    );
 };
 
 export default App;
