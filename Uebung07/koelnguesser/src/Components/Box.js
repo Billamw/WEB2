@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import UseHighscore from "./UseHighscore";
-import { BrowserRouter as Link } from "react-router-dom";
+// import { BrowserRouter as Link } from "react-router-dom";
+
+import { useHistory } from "react-router-dom";
+
 // import "./Box.css";
 
 const Box = () => {
     const { highscore, addHighscore } = UseHighscore();
     const [name, setName] = useState("");
+    const history = useHistory();
 
     const handleNameChange = (event) => {
         setName(event.target.value);
@@ -17,6 +21,8 @@ const Box = () => {
             // Hier fügst du den Highscore hinzu
             addHighscore(name, 0);
             setName("");
+
+            history.push("/game");
         }
     };
 
