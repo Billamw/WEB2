@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import UseHighscore from "./UseHighscore.js";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setHeaderName }) => {
+    const navigate = useNavigate();
     const { highscore, addHighscore } = UseHighscore();
     const [name, setName] = useState("");
 
@@ -12,11 +14,13 @@ const Login = ({ setHeaderName }) => {
     };
 
     const handleSubmit = (event) => {
+        console.log("Name submitted: " + name);
         event.preventDefault();
         if (name.trim() !== "") {
             addHighscore(name, 0);
             setName("");
         }
+        navigate("/game");
     };
 
     const handleChange = (event) => {
@@ -24,7 +28,7 @@ const Login = ({ setHeaderName }) => {
     };
     return (
         <div>
-            <form onSubmit={handleSubmit} onChange={handleChange}>
+            <form onChange={handleChange}>
                 <div className="inputContainer">
                     <input
                         className="form-control"
@@ -33,11 +37,15 @@ const Login = ({ setHeaderName }) => {
                         onChange={handleNameChange}
                         placeholder="Name eingeben"
                     />
-                    <Link to="/game">
-                        <button className="btn btn-primary" type="submit">
-                            Start
-                        </button>
-                    </Link>
+                    {/* <Link to="/game"> */}
+                    <button
+                        onClick={handleSubmit}
+                        className="btn btn-primary"
+                        type="submit"
+                    >
+                        Start
+                    </button>
+                    {/* </Link> */}
                 </div>
             </form>
             <h2 className="highscore">Highscores</h2>
