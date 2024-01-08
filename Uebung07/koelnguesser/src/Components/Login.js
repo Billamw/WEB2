@@ -1,28 +1,26 @@
 import React from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import UseHighscore from "./UseHighscore.js";
 
 const Login = ({ setHeaderName }) => {
     const { highscore } = UseHighscore();
-    const [name, setName] = useState("");
 
-    const handleNameChange = (event) => {
-        setName(event.target.value);
-    };
-
-    const handleChange = (event) => {
+    const liveNameChane = (event) => {
         setHeaderName(event.target.value);
     };
+
+    const showHighscore = () => {
+        console.log(highscore);
+    };
+
     return (
         <div>
-            <form onChange={handleChange}>
+            <button onClick={showHighscore}></button>
+            <form onChange={liveNameChane}>
                 <div className="inputContainer">
                     <input
                         className="form-control"
                         type="text"
-                        value={name}
-                        onChange={handleNameChange}
                         placeholder="Name eingeben"
                     />
                     <Link to="/game">

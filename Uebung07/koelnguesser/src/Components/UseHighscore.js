@@ -19,14 +19,10 @@ const UseHighscore = () => {
         localStorage.removeItem("highscores");
     };
 
-    const [name, setName] = useState("");
-
     return {
         highscore,
         addHighscore,
         deleteHighscores,
-        name,
-        setName,
     };
 };
 

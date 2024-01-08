@@ -2,23 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import UseHighscore from "./UseHighscore.js";
 
-const Game = ({ name }) => {
+const Game = ({ charName }) => {
     const { addHighscore } = UseHighscore();
 
+    const testFunction = () => {
+        console.log(charName);
+    };
+
     const handleClick = () => {
-        addHighscore(name, 100);
+        console.log(charName + " hat 100 Punkte erreicht!");
+        addHighscore(charName, 100);
     };
 
     return (
         <div>
             <h1>Game</h1>
+            <button className="btn btn-primary" onClick={testFunction}></button>
             <Link to="/">
                 <button
                     className="btn btn-primary"
                     type="submit"
                     onClick={handleClick}
                 >
-                    {name} du bist Fertig!
+                    {charName} du bist Fertig!
                 </button>
             </Link>
         </div>

@@ -6,13 +6,23 @@ import Game from "./Components/Game.js";
 import Cataas from "./Components/Cataas.js";
 import DeleteHighscore from "./Components/DeleteHighscore.js";
 import "./App.css";
+import { useState } from "react";
 
 const App = () => {
+    const [headerName, setHeaderName] = useState("");
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/game" element={<Game />} />
+                <Route
+                    path="/"
+                    element={
+                        <Homepage
+                            headerName={headerName}
+                            setHeaderName={setHeaderName}
+                        />
+                    }
+                />
+                <Route path="/game" element={<Game charName={headerName} />} />
                 <Route path="/json" element={<Cataas />} />
                 <Route path="/delete" element={<DeleteHighscore />} />
             </Routes>
