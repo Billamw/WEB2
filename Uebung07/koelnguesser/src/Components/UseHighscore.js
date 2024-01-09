@@ -11,7 +11,19 @@ const UseHighscore = () => {
     }, [highscore]);
 
     const addHighscore = (name, score) => {
-        setHighscore([...highscore, { name, score }]);
+        const existingHighscore = highscore.find((hs) => hs.name === name);
+
+        if (existingHighscore) {
+            if (score > existingHighscore.score) {
+                setHighscore(
+                    highscore.map((hs) =>
+                        hs.name === name ? { name, score } : hs
+                    )
+                );
+            }
+        } else {
+            setHighscore([...highscore, { name, score }]);
+        }
     };
 
     const deleteHighscores = () => {

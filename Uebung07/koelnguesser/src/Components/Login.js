@@ -9,13 +9,8 @@ const Login = ({ setHeaderName }) => {
         setHeaderName(event.target.value);
     };
 
-    const showHighscore = () => {
-        console.log(highscore);
-    };
-
     return (
         <div>
-            <button onClick={showHighscore}></button>
             <form onChange={liveNameChane}>
                 <div className="inputContainer">
                     <input
@@ -33,15 +28,17 @@ const Login = ({ setHeaderName }) => {
             <h2 className="highscore">Highscores</h2>
             <div className="highscores">
                 {highscore.length > 0 ? (
-                    <ul className="list-group">
-                        {highscore.map((entry, index) => (
-                            <li key={index} className="list-group-item">
-                                {entry.name} - {entry.score}
-                            </li>
-                        ))}
-                    </ul>
+                    <ol className="list-group">
+                        {highscore
+                            .sort((a, b) => b.score - a.score)
+                            .map((entry, index) => (
+                                <li key={index} className="list-group-item">
+                                    {index + 1}. {entry.name} - {entry.score}
+                                </li>
+                            ))}
+                    </ol>
                 ) : (
-                    <p>Noch kein Highscore vorhanden</p>
+                    <p className="highscore">Noch kein Highscore vorhanden</p>
                 )}
             </div>
         </div>

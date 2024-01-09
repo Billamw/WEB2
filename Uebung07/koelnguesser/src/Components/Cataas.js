@@ -9,11 +9,7 @@ const Cataas = () => {
         fetch("https://cataas.com/cat?json=true")
             .then((response) => response.json())
             .then((data) => {
-                if (data.size > 40000) {
-                    fetchCat();
-                } else {
-                    setCatData(data);
-                }
+                setCatData(data);
             })
             .catch((error) => console.error(error));
     };
@@ -31,9 +27,11 @@ const Cataas = () => {
                             src={`https://cataas.com/cat/${catData?._id}`}
                             alt="cat"
                         />
-                        <button onClick={fetchCat}>Load new cat</button>
+                        <button className="btn btn-primary" onClick={fetchCat}>
+                            Load new cat
+                        </button>
                         <i
-                            className="material-icons"
+                            className="material-icons toggleJson"
                             onClick={() => setShowJson(!showJson)}
                         >
                             {showJson ? "toggle_on" : "toggle_off"}
