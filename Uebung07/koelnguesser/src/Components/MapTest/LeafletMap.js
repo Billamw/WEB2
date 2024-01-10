@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     MapContainer,
     TileLayer,
@@ -12,25 +12,23 @@ import "leaflet/dist/leaflet.css";
 import useMarker from "../useMarker";
 
 const LeafletMap = () => {
-    const koelnCenter = [50.934633, 6.959839];
+    const { koelnCenter } = useMarker();
+    const appelhofPlatz = [40.9375, 6.960833];
     const customMarkerIcon = L.icon({
         iconUrl:
-            "https://fonts.gstatic.com/s/i/materialiconsoutlined/place/v6/24px.svg", // URL zu Ihrem Icon
-        iconSize: [38, 95], // Größe des Icons
-        iconAnchor: [17, 60], // Punkt des Icons, der auf die genaue Position zeigt
-        popupAnchor: [-3, -76], // Punkt, von dem das Popup geöffnet wird
+            "https://fonts.gstatic.com/s/i/materialiconsoutlined/place/v6/24px.svg",
+        iconSize: [38, 95],
+        iconAnchor: [17, 60],
+        popupAnchor: [-3, -76],
     });
 
-    const {
-        markerPosition,
-        setMarkerPosition,
-        confirmedPosition,
-        setConfirmedPosition,
-    } = useMarker();
+    const { markerPosition, setMarkerPosition, confirmedPosition } =
+        useMarker();
 
     const Markers = () => {
         useMapEvents({
             click: (e) => {
+                console.log(confirmedPosition);
                 setMarkerPosition(e.latlng);
             },
         });
@@ -40,15 +38,10 @@ const LeafletMap = () => {
         );
     };
 
-    // const confirmMarker = () => {
-    //     setConfirmedPosition(markerPosition);
-    //     setMarkerPosition(null);
-    // };
-
     return (
         <div>
             {/* <button onClick={confirmMarker}>Confirm Marker</button> */}
-            <MapContainer center={koelnCenter} zoom={13} className="mapid">
+            <MapContainer center={koelnCenter} zoom={10} className="mapid">
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
@@ -58,9 +51,13 @@ const LeafletMap = () => {
                     <Marker
                         position={confirmedPosition}
                         icon={customMarkerIcon}
-                    >
-                        <Popup>Confirmed position</Popup>
-                    </Marker>
+                    ></Marker>
+                )}
+                {confirmedPosition && (
+                    <Marker
+                        position={appelhofPlatz}
+                        icon={customMarkerIcon}
+                    ></Marker>
                 )}
             </MapContainer>
         </div>
