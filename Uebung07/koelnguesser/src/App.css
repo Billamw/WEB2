@@ -131,3 +131,10 @@ body {
 #map {
     height: 180px;
 }
+
+.mapid {
+    display: grid;
+    place-items: center;
+    height: 25vh;
+    width: 100%;
+}

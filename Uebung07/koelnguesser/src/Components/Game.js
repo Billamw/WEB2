@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import UseHighscore from "./UseHighscore.js";
 import Box from "./Box.js";
+import LeafletMap from "./MapTest/LeafletMap.js";
 
 const Game = ({ charName }) => {
     const { addHighscore } = UseHighscore();
@@ -42,8 +43,9 @@ const Game = ({ charName }) => {
                         <div>
                             <h2>Wo ist dieser Ort?</h2>
                             <img src="url-zum-bild" alt="Ort" />
-                            <div id="mapid"></div>{" "}
-                            {/* Hier können Sie Ihre OpenStreetMap hinzufügen */}
+                            <div id="mapid">
+                                <LeafletMap></LeafletMap>
+                            </div>
                             {round <= totalRounds - 1 ? (
                                 <button
                                     className="btn btn-primary"
