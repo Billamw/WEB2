@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import UseHighscore from "./UseHighscore.js";
 import Box from "./Box.js";
 import LeafletMap from "./MapTest/LeafletMap.js";
+import useMarker from "./useMarker.js";
 
 const Game = ({ charName }) => {
     const { addHighscore } = UseHighscore();
@@ -11,9 +12,15 @@ const Game = ({ charName }) => {
     const point = 6;
     const [score, setScore] = useState(0);
 
+    const { markerPosition, setConfirmedPosition, setMarkerPosition } =
+        useMarker();
+
     const handleClick = () => {
+        setConfirmedPosition(markerPosition);
+        setMarkerPosition(null);
         if (round !== totalRounds) {
             setRound(round + 1);
+            setConfirmedPosition(markerPosition);
         }
 
         if (round === totalRounds - 1) {
