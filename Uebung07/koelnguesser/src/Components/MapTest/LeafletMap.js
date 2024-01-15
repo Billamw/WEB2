@@ -8,12 +8,12 @@ import useMarker from "../useMarker";
 import UseHighscore from "../UseHighscore";
 import { Link } from "react-router-dom";
 
-const LeafletMap = ({ charName }) => {
+const LeafletMap = ({ charName, round, setRound }) => {
     const { addHighscore } = UseHighscore();
-    const [round, setRound] = useState(1);
     const totalRounds = 10;
     const point = 6;
     const [score, setScore] = useState(0);
+    const [isConfirmed, setIsConfirmed] = useState(false);
 
     const {
         markerPosition,
@@ -24,9 +24,14 @@ const LeafletMap = ({ charName }) => {
 
     useEffect(() => {
         console.log("ConfPositon:" + confirmedPosition);
+        if (confirmedPosition) {
+            const distance = L.latLng(confirmedPosition).distanceTo(koelnDom);
+            console.log(`Die Entfernung beträgt: ${distance} Meter.`);
+        }
     }, [confirmedPosition]);
 
     const handleClick = () => {
+        setIsConfirmed(true);
         setMarkerPosition(null);
         if (round !== totalRounds) {
             setRound(round + 1);
@@ -40,12 +45,15 @@ const LeafletMap = ({ charName }) => {
         console.log(score);
     };
 
-    const resetRounds = () => {
-        setRound(1);
+    const handleContinue = () => {
+        setMarkerPosition(null);
+        setConfirmedPosition(null);
+        setIsConfirmed(false);
     };
 
     const { koelnCenter } = useMarker();
-    const appelhofPlatz = [40.9375, 6.960833];
+    const koelnDom = [50.941278, 6.957016];
+
     const customMarkerIcon = L.icon({
         iconUrl:
             "https://fonts.gstatic.com/s/i/materialiconsoutlined/place/v6/24px.svg",
@@ -57,8 +65,8 @@ const LeafletMap = ({ charName }) => {
     const Markers = () => {
         useMapEvents({
             click: (e) => {
-                console.log("Positon:" + confirmedPosition);
                 setMarkerPosition(e.latlng);
+                console.log("Pos: " + e.latlng);
             },
         });
 
@@ -77,7 +85,7 @@ const LeafletMap = ({ charName }) => {
                         attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
                     />
                     <Markers />
-                    {confirmedPosition && (
+                    {confirmedPosition && !markerPosition && (
                         <Marker
                             position={confirmedPosition}
                             icon={customMarkerIcon}
@@ -85,7 +93,7 @@ const LeafletMap = ({ charName }) => {
                     )}
                     {confirmedPosition && (
                         <Marker
-                            position={appelhofPlatz}
+                            position={koelnDom}
                             icon={customMarkerIcon}
                         ></Marker>
                     )}
@@ -93,14 +101,21 @@ const LeafletMap = ({ charName }) => {
             </div>
 
             {round <= totalRounds - 1 ? (
-                <button className="btn btn-primary" onClick={handleClick}>
-                    Bestätigen
-                </button>
+                !isConfirmed ? (
+                    <button className="btn btn-primary" onClick={handleClick}>
+                        Bestätigen
+                    </button>
+                ) : (
+                    <button
+                        className="btn btn-primary"
+                        onClick={handleContinue}
+                    >
+                        Weiter
+                    </button>
+                )
             ) : (
                 <Link to="/">
-                    <button onClick={resetRounds} className="btn btn-primary">
-                        Fertig!
-                    </button>
+                    <button className="btn btn-primary">Fertig!</button>
                 </Link>
             )}
         </div>
