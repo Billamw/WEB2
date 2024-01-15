@@ -1,17 +1,49 @@
-import React from "react";
-import {
-    MapContainer,
-    TileLayer,
-    Marker,
-    Popup,
-    useMapEvents,
-} from "react-leaflet";
+import React, { useState, useEffect } from "react";
+import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 import useMarker from "../useMarker";
 
-const LeafletMap = () => {
+import UseHighscore from "../UseHighscore";
+import { Link } from "react-router-dom";
+
+const LeafletMap = ({ charName }) => {
+    const { addHighscore } = UseHighscore();
+    const [round, setRound] = useState(1);
+    const totalRounds = 10;
+    const point = 6;
+    const [score, setScore] = useState(0);
+
+    const {
+        markerPosition,
+        setConfirmedPosition,
+        setMarkerPosition,
+        confirmedPosition,
+    } = useMarker();
+
+    useEffect(() => {
+        console.log("ConfPositon:" + confirmedPosition);
+    }, [confirmedPosition]);
+
+    const handleClick = () => {
+        setMarkerPosition(null);
+        if (round !== totalRounds) {
+            setRound(round + 1);
+            setConfirmedPosition(markerPosition);
+        }
+
+        if (round === totalRounds - 1) {
+            addHighscore(charName, score);
+        }
+        setScore(score + point);
+        console.log(score);
+    };
+
+    const resetRounds = () => {
+        setRound(1);
+    };
+
     const { koelnCenter } = useMarker();
     const appelhofPlatz = [40.9375, 6.960833];
     const customMarkerIcon = L.icon({
@@ -22,13 +54,10 @@ const LeafletMap = () => {
         popupAnchor: [-3, -76],
     });
 
-    const { markerPosition, setMarkerPosition, confirmedPosition } =
-        useMarker();
-
     const Markers = () => {
         useMapEvents({
             click: (e) => {
-                console.log(confirmedPosition);
+                console.log("Positon:" + confirmedPosition);
                 setMarkerPosition(e.latlng);
             },
         });
@@ -40,26 +69,40 @@ const LeafletMap = () => {
 
     return (
         <div>
-            {/* <button onClick={confirmMarker}>Confirm Marker</button> */}
-            <MapContainer center={koelnCenter} zoom={10} className="mapid">
-                <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-                />
-                <Markers />
-                {confirmedPosition && (
-                    <Marker
-                        position={confirmedPosition}
-                        icon={customMarkerIcon}
-                    ></Marker>
-                )}
-                {confirmedPosition && (
-                    <Marker
-                        position={appelhofPlatz}
-                        icon={customMarkerIcon}
-                    ></Marker>
-                )}
-            </MapContainer>
+            <div>
+                {/* <button onClick={confirmMarker}>Confirm Marker</button> */}
+                <MapContainer center={koelnCenter} zoom={10} className="mapid">
+                    <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+                    />
+                    <Markers />
+                    {confirmedPosition && (
+                        <Marker
+                            position={confirmedPosition}
+                            icon={customMarkerIcon}
+                        ></Marker>
+                    )}
+                    {confirmedPosition && (
+                        <Marker
+                            position={appelhofPlatz}
+                            icon={customMarkerIcon}
+                        ></Marker>
+                    )}
+                </MapContainer>
+            </div>
+
+            {round <= totalRounds - 1 ? (
+                <button className="btn btn-primary" onClick={handleClick}>
+                    Bestätigen
+                </button>
+            ) : (
+                <Link to="/">
+                    <button onClick={resetRounds} className="btn btn-primary">
+                        Fertig!
+                    </button>
+                </Link>
+            )}
         </div>
     );
 };

@@ -51,25 +51,8 @@ const Game = ({ charName }) => {
                             <h2>Wo ist dieser Ort?</h2>
                             <img src="url-zum-bild" alt="Ort" />
                             <div id="mapid">
-                                <LeafletMap></LeafletMap>
+                                <LeafletMap charName={charName}></LeafletMap>
                             </div>
-                            {round <= totalRounds - 1 ? (
-                                <button
-                                    className="btn btn-primary"
-                                    onClick={handleClick}
-                                >
-                                    Bestätigen
-                                </button>
-                            ) : (
-                                <Link to="/">
-                                    <button
-                                        onClick={resetRounds}
-                                        className="btn btn-primary"
-                                    >
-                                        Fertig!
-                                    </button>
-                                </Link>
-                            )}
                         </div>
                     </div>
                 }
