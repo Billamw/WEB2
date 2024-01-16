@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css";
 import useMarker from "../useMarker";
 
 import UseHighscore from "../UseHighscore";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LeafletMap = ({
     charName,
@@ -19,19 +19,22 @@ const LeafletMap = ({
     const { addHighscore } = UseHighscore();
     const [score, setScore] = useState(0);
     const [isConfirmed, setIsConfirmed] = useState(false);
+    const navigate = useNavigate();
+    let realScore = score;
 
     const {
         markerPosition,
         setConfirmedPosition,
         setMarkerPosition,
         confirmedPosition,
+        koelnCenter,
     } = useMarker();
 
     useEffect(() => {
         if (confirmedPosition) {
             const distance =
                 L.latLng(confirmedPosition).distanceTo(coordinates);
-            console.log(`Die Entfernung beträgt: ${distance} Meter.`);
+            // console.log(`Die Entfernung beträgt: ${distance} Meter.`);
             const maxDistance = 3000;
             const minDistance = 0;
             let distScore =
@@ -40,9 +43,10 @@ const LeafletMap = ({
             distScore = Math.max(0, Math.min(distScore, 10));
 
             distScore = Math.round(distScore);
-            setPoint(distScore);
+            setPoint(distScore); // Um in Game anzuzeigen
             setScore(score + distScore);
-            console.log("score added: " + distScore);
+            realScore += distScore;
+            console.log("score: " + realScore);
         }
     }, [confirmedPosition]);
 
@@ -51,15 +55,9 @@ const LeafletMap = ({
         if (markerPosition) {
             setIsConfirmed(true);
             setMarkerPosition(null);
-            if (round !== totalRounds) {
-                setConfirmedPosition(markerPosition);
-            }
 
-            if (round === totalRounds - 1) {
-                addHighscore(charName, score);
-            }
-            // setScore(score);
-            // console.log(score);
+            setConfirmedPosition(markerPosition);
+
             setErrorMessage("");
         } else {
             setErrorMessage("Bitte setzen Sie einen Marker.");
@@ -74,13 +72,32 @@ const LeafletMap = ({
         setConfirmedPosition(null);
         setIsConfirmed(false);
         setPoint(0);
-        if (round !== totalRounds) {
-            setRound(round + 1);
-        }
-        // console.log("Round: " + round);
+
+        setRound(round + 1);
     };
 
-    const { koelnCenter } = useMarker();
+    const handleFinish = () => {
+        const distance = L.latLng(markerPosition).distanceTo(coordinates);
+        // console.log(`Die Entfernung beträgt: ${distance} Meter.`);
+        const maxDistance = 3000;
+        const minDistance = 0;
+        let distScore =
+            ((maxDistance - distance) / (maxDistance - minDistance)) * 10;
+
+        distScore = Math.max(0, Math.min(distScore, 10));
+
+        distScore = Math.round(distScore);
+        setPoint(distScore); // Um in Game anzuzeigen
+        setScore(score + distScore);
+        realScore += distScore;
+        console.log("score: " + realScore);
+
+        setTimeout(() => {
+            navigate("/");
+        }, 100);
+        addHighscore(charName, realScore);
+        console.log("Ende");
+    };
 
     const customMarkerIcon = L.icon({
         iconUrl:
@@ -94,7 +111,6 @@ const LeafletMap = ({
         useMapEvents({
             click: (e) => {
                 setMarkerPosition(e.latlng);
-                // console.log("Pos: " + e.latlng);
             },
         });
 
@@ -102,14 +118,6 @@ const LeafletMap = ({
             <Marker position={markerPosition} icon={customMarkerIcon}></Marker>
         );
     };
-
-    useEffect(() => {
-        console.log("UseEffect Round: " + round);
-        if (round > totalRounds) {
-            addHighscore(charName, score);
-            console.log("Ende");
-        }
-    }, [round, totalRounds]);
 
     return (
         <div>
@@ -150,9 +158,9 @@ const LeafletMap = ({
                     </button>
                 )
             ) : (
-                <Link to="/">
-                    <button className="btn btn-primary">Fertig!</button>
-                </Link>
+                <button onClick={handleFinish} className="btn btn-primary">
+                    Fertig!
+                </button>
             )}
         </div>
     );

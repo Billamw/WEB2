@@ -37,7 +37,11 @@ const Cataas = () => {
                             {showJson ? "toggle_on" : "toggle_off"}
                         </i>
                     </div>
-                    {showJson && <pre>{JSON.stringify(catData, null, 2)}</pre>}
+                    {showJson && (
+                        <pre style={{ overflow: "auto", maxHeight: "200px" }}>
+                            {JSON.stringify(catData, null, 2)}
+                        </pre>
+                    )}
                 </div>
             }
         ></Box>
