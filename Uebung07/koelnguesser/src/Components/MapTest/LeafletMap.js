@@ -8,10 +8,15 @@ import useMarker from "../useMarker";
 import UseHighscore from "../UseHighscore";
 import { Link } from "react-router-dom";
 
-const LeafletMap = ({ charName, round, setRound }) => {
+const LeafletMap = ({
+    charName,
+    round,
+    setRound,
+    coordinates,
+    setPoint,
+    totalRounds,
+}) => {
     const { addHighscore } = UseHighscore();
-    const totalRounds = 10;
-    const point = 6;
     const [score, setScore] = useState(0);
     const [isConfirmed, setIsConfirmed] = useState(false);
 
@@ -23,36 +28,59 @@ const LeafletMap = ({ charName, round, setRound }) => {
     } = useMarker();
 
     useEffect(() => {
-        console.log("ConfPositon:" + confirmedPosition);
         if (confirmedPosition) {
-            const distance = L.latLng(confirmedPosition).distanceTo(koelnDom);
+            const distance =
+                L.latLng(confirmedPosition).distanceTo(coordinates);
             console.log(`Die Entfernung beträgt: ${distance} Meter.`);
+            const maxDistance = 3000;
+            const minDistance = 0;
+            let distScore =
+                ((maxDistance - distance) / (maxDistance - minDistance)) * 10;
+
+            distScore = Math.max(0, Math.min(distScore, 10));
+
+            distScore = Math.round(distScore);
+            setPoint(distScore);
+            setScore(score + distScore);
+            console.log("score added: " + distScore);
         }
     }, [confirmedPosition]);
 
+    const [errorMessage, setErrorMessage] = useState("");
     const handleClick = () => {
-        setIsConfirmed(true);
-        setMarkerPosition(null);
-        if (round !== totalRounds) {
-            setRound(round + 1);
-            setConfirmedPosition(markerPosition);
-        }
+        if (markerPosition) {
+            setIsConfirmed(true);
+            setMarkerPosition(null);
+            if (round !== totalRounds) {
+                setConfirmedPosition(markerPosition);
+            }
 
-        if (round === totalRounds - 1) {
-            addHighscore(charName, score);
+            if (round === totalRounds - 1) {
+                addHighscore(charName, score);
+            }
+            // setScore(score);
+            // console.log(score);
+            setErrorMessage("");
+        } else {
+            setErrorMessage("Bitte setzen Sie einen Marker.");
+            setTimeout(() => {
+                setErrorMessage("");
+            }, 1000);
         }
-        setScore(score + point);
-        console.log(score);
     };
 
     const handleContinue = () => {
         setMarkerPosition(null);
         setConfirmedPosition(null);
         setIsConfirmed(false);
+        setPoint(0);
+        if (round !== totalRounds) {
+            setRound(round + 1);
+        }
+        // console.log("Round: " + round);
     };
 
     const { koelnCenter } = useMarker();
-    const koelnDom = [50.941278, 6.957016];
 
     const customMarkerIcon = L.icon({
         iconUrl:
@@ -66,7 +94,7 @@ const LeafletMap = ({ charName, round, setRound }) => {
         useMapEvents({
             click: (e) => {
                 setMarkerPosition(e.latlng);
-                console.log("Pos: " + e.latlng);
+                // console.log("Pos: " + e.latlng);
             },
         });
 
@@ -75,8 +103,17 @@ const LeafletMap = ({ charName, round, setRound }) => {
         );
     };
 
+    useEffect(() => {
+        console.log("UseEffect Round: " + round);
+        if (round > totalRounds) {
+            addHighscore(charName, score);
+            console.log("Ende");
+        }
+    }, [round, totalRounds]);
+
     return (
         <div>
+            {errorMessage && <p className="errorMessage">{errorMessage}</p>}
             <div>
                 {/* <button onClick={confirmMarker}>Confirm Marker</button> */}
                 <MapContainer center={koelnCenter} zoom={10} className="mapid">
@@ -93,14 +130,13 @@ const LeafletMap = ({ charName, round, setRound }) => {
                     )}
                     {confirmedPosition && (
                         <Marker
-                            position={koelnDom}
+                            position={coordinates}
                             icon={customMarkerIcon}
                         ></Marker>
                     )}
                 </MapContainer>
             </div>
-
-            {round <= totalRounds - 1 ? (
+            {round < totalRounds ? (
                 !isConfirmed ? (
                     <button className="btn btn-primary" onClick={handleClick}>
                         Bestätigen

@@ -23,7 +23,7 @@ const App = () => {
                     }
                 />
                 <Route path="/game" element={<Game charName={headerName} />} />
-                <Route path="/json" element={<Cataas />} />
+                <Route path="/info" element={<Cataas />} />
                 <Route path="/delete" element={<DeleteHighscore />} />
             </Routes>
         </Router>

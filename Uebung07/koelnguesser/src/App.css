@@ -138,3 +138,15 @@ body {
     height: 25vh;
     width: 100%;
 }
+
+.errorMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 200%);
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    z-index: 1000;
+}
