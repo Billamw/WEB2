@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.App {
+    height: 5cm;
+    width: 5cm;
+    display: grid;
+    place-items: center;
+
+    background-color: aqua;
+}
